@@ -7,14 +7,14 @@ function getComputerChoice() {
   } else if (number > 0.333 && number <= 0.666) {
     computerChoice = 'Paper';
   } else {
-    computerChoice = 'Scissor';
+    computerChoice = 'Scissors';
   }
 
   return computerChoice;
 }
 
 function getHumanChoice() {
-  answer = prompt('Choose between rock, paper, scissor');
+  answer = prompt('Choose between Rock, Paper, Scissors');
   let humanChoice = answer.charAt(0).toUpperCase() + answer.slice(1).toLowerCase();
 
   return humanChoice;
@@ -32,11 +32,11 @@ function playGame() {
       console.log(`You chose ${humanChoice}. Computer chose ${computerChoice}. You win!`);
       humanScore++;
       return;
-    } else if (humanChoice === 'Rock' && computerChoice === 'Scissor') {
+    } else if (humanChoice === 'Rock' && computerChoice === 'Scissors') {
       console.log(`You chose ${humanChoice}. Computer chose ${computerChoice}. You win!`);
       humanScore++;
       return;
-    } else if (humanChoice === 'Scissor' && computerChoice === 'Paper') {
+    } else if (humanChoice === 'Scissors' && computerChoice === 'Paper') {
       console.log(`You chose ${humanChoice}. Computer chose ${computerChoice}. You win!`);
       humanScore++;
       return;
@@ -56,3 +56,5 @@ function playGame() {
 
   console.log(`Final Score: You: ${humanScore} | Computer: ${computerScore}`);
 }
+
+playGame();
