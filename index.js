@@ -1,3 +1,6 @@
+let humanScore = 0;
+let computerScore = 0;
+
 function getComputerChoice() {
   let number = Math.random();
   let computerChoice = '';
@@ -16,6 +19,6 @@ function getComputerChoice() {
 function getHumanChoice() {
   answer = prompt('Choose between rock, paper, scissor');
   let humanChoice = answer.charAt(0).toUpperCase() + answer.slice(1).toLowerCase();
-  
+
   return humanChoice;
 }
