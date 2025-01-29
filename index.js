@@ -1,6 +1,3 @@
-let humanScore = 0;
-let computerScore = 0;
-
 function getComputerChoice() {
   let number = Math.random();
   let computerChoice = '';
@@ -23,30 +20,39 @@ function getHumanChoice() {
   return humanChoice;
 }
 
-function playRound(humanChoice, computerChoice) {
-  if (humanChoice === computerChoice) {
-    console.log(`You chose ${humanChoice}. Computer chose ${computerChoice}. It's a tie.`);
-    return;
-  } else if (humanChoice === 'Paper' && computerChoice === 'Rock') {
-    console.log(`You chose ${humanChoice}. Computer chose ${computerChoice}. You win!`);
-    humanScore++;
-    return;
-  } else if (humanChoice === 'Rock' && computerChoice === 'Scissor') {
-    console.log(`You chose ${humanChoice}. Computer chose ${computerChoice}. You win!`);
-    humanScore++;
-    return;
-  } else if (humanChoice === 'Scissor' && computerChoice === 'Paper') {
-    console.log(`You chose ${humanChoice}. Computer chose ${computerChoice}. You win!`);
-    humanScore++;
-    return;
-  } else {
-    console.log(`You chose ${humanChoice}. Computer chose ${computerChoice}. You lose.`);
-    computerScore++;
-    return;
+function playGame() {
+  let humanScore = 0;
+  let computerScore = 0;
+
+  function playRound(humanChoice, computerChoice) {
+    if (humanChoice === computerChoice) {
+      console.log(`You chose ${humanChoice}. Computer chose ${computerChoice}. It's a tie.`);
+      return;
+    } else if (humanChoice === 'Paper' && computerChoice === 'Rock') {
+      console.log(`You chose ${humanChoice}. Computer chose ${computerChoice}. You win!`);
+      humanScore++;
+      return;
+    } else if (humanChoice === 'Rock' && computerChoice === 'Scissor') {
+      console.log(`You chose ${humanChoice}. Computer chose ${computerChoice}. You win!`);
+      humanScore++;
+      return;
+    } else if (humanChoice === 'Scissor' && computerChoice === 'Paper') {
+      console.log(`You chose ${humanChoice}. Computer chose ${computerChoice}. You win!`);
+      humanScore++;
+      return;
+    } else {
+      console.log(`You chose ${humanChoice}. Computer chose ${computerChoice}. You lose.`);
+      computerScore++;
+      return;
+    }
   }
+
+  for (let i = 0; i < 5; i++) {
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+
+    playRound(humanSelection, computerSelection);
+  }
+
+  console.log(`Final Score: You: ${humanScore} | Computer: ${computerScore}`);
 }
-
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-
-playRound(humanSelection, computerSelection);
