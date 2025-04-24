@@ -2,6 +2,7 @@ const rockBtn = document.querySelector('.rock')
 const paperBtn = document.querySelector('.paper')
 const scissorsBtn = document.querySelector('.scissors')
 const scoreDiv = document.querySelector('.score')
+const finalScoreDiv = document.querySelector('.final-score')
 
 function getComputerChoice() {
   let number = Math.random();
