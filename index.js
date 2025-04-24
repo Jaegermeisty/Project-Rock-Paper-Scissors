@@ -19,7 +19,17 @@ function getComputerChoice() {
   return computerChoice;
 }
 
+  rockBtn.addEventListener('click', () => {
+    playRound('Rock', getComputerChoice());
+  });
 
+  paperBtn.addEventListener('click', () => {
+    playRound('Paper', getComputerChoice());
+  });
+
+  scissorsBtn.addEventListener('click', () => {
+    playRound('Scissors', getComputerChoice());
+  });
 
 
   let humanScore = 0;
