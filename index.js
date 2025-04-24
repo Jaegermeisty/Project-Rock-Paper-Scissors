@@ -36,27 +36,30 @@ function getComputerChoice() {
   let computerScore = 0;
 
   function playRound(humanChoice, computerChoice) {
+
+    if (humanScore >= 5 || computerScore >= 5) {
+      finalScoreDiv.innerHTML = `Final Score: You: ${humanScore} | Computer: ${computerScore}. Reload the page to play again.`;
+      return;
+    }
+    
     if (humanChoice === computerChoice) {
-      console.log(`You chose ${humanChoice}. Computer chose ${computerChoice}. It's a tie.`);
+      scoreDiv.innerHTML = `You chose ${humanChoice}. Computer chose ${computerChoice}. It's a tie.`;
       return;
     } else if (humanChoice === 'Paper' && computerChoice === 'Rock') {
-      console.log(`You chose ${humanChoice}. Computer chose ${computerChoice}. You win!`);
+      scoreDiv.innerHTML = `You chose ${humanChoice}. Computer chose ${computerChoice}. You win!`;
       humanScore++;
       return;
     } else if (humanChoice === 'Rock' && computerChoice === 'Scissors') {
-      console.log(`You chose ${humanChoice}. Computer chose ${computerChoice}. You win!`);
+      scoreDiv.innerHTML = `You chose ${humanChoice}. Computer chose ${computerChoice}. You win!`;
       humanScore++;
       return;
     } else if (humanChoice === 'Scissors' && computerChoice === 'Paper') {
-      console.log(`You chose ${humanChoice}. Computer chose ${computerChoice}. You win!`);
+      scoreDiv.innerHTML = `You chose ${humanChoice}. Computer chose ${computerChoice}. You win!`;
       humanScore++;
       return;
     } else {
-      console.log(`You chose ${humanChoice}. Computer chose ${computerChoice}. You lose.`);
+      scoreDiv.innerHTML = `You chose ${humanChoice}. Computer chose ${computerChoice}. You lose.`;
       computerScore++;
       return;
     }
   }
- 
-  console.log(`Final Score: You: ${humanScore} | Computer: ${computerScore}`);
-
